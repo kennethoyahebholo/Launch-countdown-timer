@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+/* custom properties */
+:root {
+  /* color */
+  --clr-primary-200: hsl(345, 95%, 68%);
+  --clr-primary-100: hsl(237, 18%, 59%);
+
+  --clr-neutral-400: hsl(234, 17%, 12%);
+  --clr-neutral-300: hsl(235, 16%, 14%);
+  --clr-neutral-200: hsl(236, 21%, 26%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  --ff-primary: 'Outfit', sans-serif;
+
+  --ff-body: var(--ff-primary);
+   
+  /* font weight */
+  /* --fw-regular : 500; */
+  --fw-bold : 700;
+  
+  /* font size */
+  --fs-300: 14px;
+
+  --fs-body: var(--fs-300);
+
+  --size-100: .25rem;
+  --size-200: .5rem;
+  --size-300: .75rem;
+  --size-400: 1rem;
+  --size-500: 1.2rem;
+  --size-600: 1.5rem;
+  --size-700: 1.8rem;
+  --size-800: 2rem;
+  --size-900: 3.5rem;
+  --size-950: 6rem;
+  --size-1000: 15rem;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+*{
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  /* height: 100%; */
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: var(--clr-neutral-100);
+  font-family: var(--ff-primary);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* General styling */
+main{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ height: 100vh;
+ background-image: url(./images/bg-stars.svg),linear-gradient(var(--clr-neutral-400), var(--clr-neutral-300));
+}
+
+main>.count__down__con>h2{
+ font-weight: var(--clr-neutral-100);
+ color: var(--clr-neutral-100);
+ font-size: var(--size-600);
+ letter-spacing: var(--size-200);
+ text-transform: uppercase;
+ text-align: center;
+ margin-bottom: var(--size-900);
+ margin-top: 8rem;
+ max-width: 25rem;
+}
+
+.timer{
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ text-align: center;
+}
+
+.timer__wrapper{
+ background-color: var(--clr-neutral-300);
+ padding: var(--size-300);
+ width: 5rem;
+ border-radius: 12px;
+ position: relative;
+ z-index: 100;
+}
+
+.flip1{
+ background-color: var(--clr-neutral-200);
+ width: 100%;
+ height: 49.3%;
+ z-index: -2;
+ position: absolute;
+ top: 0;
+ left: 0;
+ border-radius: 12px;
+}
+
+.flip2{
+ background-color: var(--clr-neutral-200);
+ width: 100%;
+ height: 49.3%;
+ z-index: -2;
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ border-radius: 12px;
+}
+
+.timer__wrapper>h1{
+ font-weight: var(--fw-bold);
+ font-size: 2.5rem;
+ color: var(--clr-primary-200);
+ /* z-index: ; */
+}
+
+h3{
+ color: var(--clr-primary-100);
+ font-size: var(--fs-300);
+}
+
+.rock__container{
+ position: absolute;
+ bottom: 0;
+ background-image: url("./images/pattern-hills.svg");
+ width: 100%;
+ height: 26vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.social__con{
+ display: flex;
+}
+
+.social__con>img{
+ margin-right: 2rem;
+ object-fit: contain;
+ width: 2rem;
+}
+
+@media (min-width:1440px) {
+ main>.count__down__con>h2{
+ max-width: 55rem;
+}
+
+
+}
